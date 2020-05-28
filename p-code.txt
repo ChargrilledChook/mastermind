@@ -1,0 +1,9 @@
+Object candidates:
+
+Player Class => Gets user input
+
+Computer Class => Randomly selects and stores the code
+
+Board Class => Stores information + visually depicts input
+
+Game Class (?) => Drives the game loop + assesses win condition
