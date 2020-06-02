@@ -10,7 +10,7 @@ attr_reader :MAX_TURNS
   end
 
   def draw_board(guess, clues)
-    puts "Guess #{@counter}: #{guess.join("")} => #{clues.join("")}\n\n" 
+    puts "Guess #{@counter.to_s.rjust(2,'0')}: #{guess.join("")} => #{clues.join("")}\n\n" 
     @counter += 1
     if clues.join("") == "XXXX"
       puts 'Congratulations! You cracked the code!'

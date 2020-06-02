@@ -3,7 +3,7 @@ class Computer
   attr_reader :secret_code
 
   def initialize
-    @secret_code = [2,6,1,1] #make_code
+    @secret_code = make_code
   end
 
   def compare_code_full(guess, code=secret_code.dup)
