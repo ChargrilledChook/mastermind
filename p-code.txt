@@ -7,3 +7,24 @@ Computer Class => Randomly selects and stores the code
 Board Class => Stores information + visually depicts input
 
 Game Class (?) => Drives the game loop + assesses win condition
+
+
+GENERAL REQUIREMENTS
+
+* Player makes a guess - 4 digits between 1 and 6 (ie six "colours")
+
+* Makes an even number of guesses between 8 and 12 turns
+
+* Computer (or board etc) gives feedback for each guess - eg, X for exact match, O for partial match (or other schema)
+
+* Player wins when they match the code or loses when they run out of turns without matching input
+
+EXTRA
+
+* A points system for how quickly you guess / rounds
+
+* Ability to customise amount of 'colours'
+
+* Ability to customise amount of rounds
+
+* Visual flair / coloured text
