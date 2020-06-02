@@ -15,8 +15,9 @@ puts %{
     If a number is right but in the wrong position, you will receive an O.
 
     Good luck!
-    
+
 }
+print computer.secret_code
 while board.counter <= 12 do
     guess = player.get_guess
     board.draw_board(guess, computer.compare_code_full(guess.dup))

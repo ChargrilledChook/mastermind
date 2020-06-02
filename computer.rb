@@ -3,7 +3,7 @@ class Computer
   attr_reader :secret_code
 
   def initialize
-    @secret_code = make_code
+    @secret_code = [2,6,1,1] #make_code
   end
 
   def compare_code_full(guess, code=secret_code.dup)
@@ -11,6 +11,7 @@ class Computer
     guess.each_with_index do |e, idx|
       if e == code[idx]
         code[idx] = 'B'
+        guess[idx] = 'C'
         result << 'X'
       end
     end
@@ -26,6 +27,7 @@ private
   def compare_code_partial(guess, code, result)
     guess.each do |e|
       i = code.index(e)
+      #binding.pry
       if i != nil
         code[i] = 'O'
         result << 'O'
