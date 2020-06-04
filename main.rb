@@ -7,5 +7,5 @@ require_relative 'game'
 
 game = Game.new
 
-game.welcome
-game.game_loop
+game.game_start
+game.game_loop_alt

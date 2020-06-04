@@ -6,7 +6,7 @@ class Player
     @name = name
   end
 
-  def get_code
+  def grab_code
     print 'Enter your code: '
     guess = gets.chomp.split('')
     guess.map(&:to_i)

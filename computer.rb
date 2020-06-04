@@ -20,12 +20,11 @@ class Computer
     compare_code_partial(guess, code, result)
   end
 
-  private
-
-  def make_code
-    empty_code = %w[0 0 0 0]
-    empty_code.map { rand(1..6) }
+  def make_code(num = 4)
+    num.times.map { rand(1..6) }
   end
+
+  private
 
   def compare_code_partial(guess, code, result)
     guess.each do |e|

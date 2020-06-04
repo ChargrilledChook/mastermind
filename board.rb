@@ -19,7 +19,7 @@ class Board
       puts 'Congratulations! You cracked the code!'
       self.counter = 100
     elsif self.counter > max_turns
-      puts "Bad luck! You didn't crack the code in time!" \
+      puts "Bad luck! You didn't crack the code in time! " \
       "The correct code was #{code.join('')}."
     end
   end

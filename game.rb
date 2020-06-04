@@ -10,35 +10,55 @@ class Game
     @board = Board.new
   end
 
-  def welcome
+  def rules
     puts %(
-      Welcome to Mastermind!
 
-      Rules: The codebreaker has 12 turns to
-      crack the codemaster's secret code.
-      Each turn the codebreaker guesses a 4 digit code.
-      Each number must be between 1 and 6.
-      If a number is an exact match you will receive an X.
-      If a number is right but in the wrong position, you will receive an O.
+  Rules: The codebreaker has 12 turns to
+  crack the codemaster's secret code.
+  Each turn the codebreaker guesses a 4 digit code.
+  Each number must be between 1 and 6.
+  If a number is an exact match you will receive an X.
+  If a number is right but in the wrong position, you will receive an O.
 
-      Good luck!
+  )
+  end
 
+  def game_start
+    puts '  Welcome to Mastermind!'
+    rules
+    game_mode
+  end
+
+  def game_mode
+    menu = [1, 2]
+
+    puts %( Would you like to set the code or crack it?
+
+      1. Set the code
+      2. Crack the code
     )
+    user_choice = gets.chomp.to_i
+
+    until menu.include?(user_choice)
+      puts 'Invalid selection. Enter 1 or 2.'
+      user_choice = gets.chomp.to_i
+    end
   end
 
   def game_loop
     board.code = computer.secret_code
     while board.counter <= 12
-      guess = player.get_code
+      guess = player.grab_code
       board.draw_board(guess, computer.compare_code_full(guess.dup), board.code)
     end
   end
 
-  def game_loop_alt(board, player, _computer)
+  def game_loop_alt
+    code = player.grab_code
     while board.counter <= 12
-      code = player.get_code
-      board.draw_board(make_code, code.dup)
+      guess = computer.make_code
+      board.draw_board(guess, computer.compare_code_full(guess.dup), code)
+      sleep(1)
     end
   end
 end
-
