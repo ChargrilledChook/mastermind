@@ -10,6 +10,14 @@ class Game
     @board = Board.new
   end
 
+  def game_start
+    puts '  Welcome to Mastermind!'
+    rules
+    game_menu
+  end
+
+  private
+
   def rules
     puts %(
 
@@ -23,29 +31,34 @@ class Game
   )
   end
 
-  def game_start
-    puts '  Welcome to Mastermind!'
-    rules
-    game_mode
-  end
-
-  def game_mode
+  def game_menu
     menu = [1, 2]
-
-    puts %( Would you like to set the code or crack it?
-
-      1. Set the code
-      2. Crack the code
-    )
+    puts menu_text
     user_choice = gets.chomp.to_i
-
     until menu.include?(user_choice)
       puts 'Invalid selection. Enter 1 or 2.'
       user_choice = gets.chomp.to_i
     end
+    game_mode(user_choice)
   end
 
-  def game_loop
+  def menu_text
+    %( Would you like to set the code or crack it?
+
+      1. Set the code
+      2. Crack the code
+    )
+  end
+
+  def game_mode(choice)
+    if choice == 2
+      game_code_cracker
+    else
+      game_code_master
+    end
+  end
+
+  def game_code_cracker
     board.code = computer.secret_code
     while board.counter <= 12
       guess = player.grab_code
@@ -53,7 +66,7 @@ class Game
     end
   end
 
-  def game_loop_alt
+  def game_code_master
     code = player.grab_code
     while board.counter <= 12
       guess = computer.make_code

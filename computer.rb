@@ -36,4 +36,11 @@ class Computer
     end
     result
   end
+
+  def crack_code(last_guess)
+    last_guess.each_with_index do |e, idx|
+      if last_guess[idx] == 'C'
+      end
+    end
+  end
 end
