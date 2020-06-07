@@ -15,6 +15,10 @@ class Board
     puts "Guess #{counter.to_s.rjust(2, '0')}: " \
     "#{guess.join('')} => #{clues.join('')}\n\n"
     self.counter += 1
+    check_win(clues, mode, code)
+  end
+
+  def check_win(clues, mode, code)
     if clues.join('') == 'XXXX'
       puts mode.win
       self.counter = 100
