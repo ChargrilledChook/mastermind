@@ -63,7 +63,7 @@ class Game
     board.code = computer.secret_code
     while board.counter <= 12
       guess = player.grab_code
-      board.draw_board(guess, computer.compare_code_full(guess.dup), board.code)
+      board.draw_board(guess, computer.compare_code_full(guess.dup), board.code, player)
     end
   end
 
@@ -74,7 +74,7 @@ class Game
     while board.counter <= 12
       guess = cracker.crack_code(last_guess)
       last_guess = guess
-      board.draw_board(guess, computer.compare_code_full(guess.dup, code.dup), code)
+      board.draw_board(guess, computer.compare_code_full(guess.dup, code.dup), code, computer)
       sleep(1)
     end
   end

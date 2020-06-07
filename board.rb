@@ -11,16 +11,15 @@ class Board
     @code = []
   end
 
-  def draw_board(guess, clues, code)
+  def draw_board(guess, clues, code, mode)
     puts "Guess #{counter.to_s.rjust(2, '0')}: " \
     "#{guess.join('')} => #{clues.join('')}\n\n"
     self.counter += 1
     if clues.join('') == 'XXXX'
-      puts 'Congratulations! You cracked the code!'
+      puts mode.win
       self.counter = 100
     elsif self.counter > max_turns
-      puts "Bad luck! You didn't crack the code in time! " \
-      "The correct code was #{code.join('')}."
+      puts mode.lose
     end
   end
 end

@@ -11,4 +11,13 @@ class Player
     guess = gets.chomp.split('')
     guess.map(&:to_i)
   end
+
+  def win
+    'Congratulations! You cracked the code!'
+  end
+
+  def lose
+    "Bad luck! You didn't crack the code in time! " \
+    "The correct code was #{code.join('')}."
+  end
 end

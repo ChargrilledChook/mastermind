@@ -25,6 +25,16 @@ class Computer
     num.times.map { rand(1..6) }
   end
 
+  def win
+    'Compubot-5000 has outsmarted you and cracked your code with its advanced algorithims.' \
+    ' The AI singularity has begun. Better luck next time!'
+  end
+
+  def lose
+    'Compubot-5000 could not crack your code. You have halted the AI singularity. ' \
+    'Good job!'
+  end
+
   private
 
   def compare_code_partial(guess, code, result)
