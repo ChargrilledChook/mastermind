@@ -69,9 +69,12 @@ class Game
 
   def game_code_master
     code = player.grab_code
+    cracker.p_code = code
+    last_guess = [7, 7, 7, 7]
     while board.counter <= 12
-      guess = computer.make_code
-      board.draw_board(guess, computer.compare_code_full(guess.dup), code)
+      guess = cracker.crack_code(last_guess)
+      last_guess = guess
+      board.draw_board(guess, computer.compare_code_full(guess.dup, code.dup), code)
       sleep(1)
     end
   end

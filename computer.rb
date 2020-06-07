@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'pry'
 # Responsible for generating, storing and comparing the secret code
 class Computer
   attr_reader :secret_code
@@ -15,6 +15,7 @@ class Computer
 
       code[idx] = 'B'
       guess[idx] = 'C'
+
       result << 'X'
     end
     compare_code_partial(guess, code, result)
@@ -35,12 +36,5 @@ class Computer
       end
     end
     result
-  end
-
-  def crack_code(last_guess)
-    last_guess.each_with_index do |e, idx|
-      if last_guess[idx] == 'C'
-      end
-    end
   end
 end

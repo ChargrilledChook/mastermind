@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 require_relative 'board'
 require_relative 'player'
