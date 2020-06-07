@@ -19,7 +19,7 @@ class Board
       puts mode.win
       self.counter = 100
     elsif self.counter > max_turns
-      puts mode.lose
+      puts mode.lose + " The correct code was #{code.join('')}."
     end
   end
 end

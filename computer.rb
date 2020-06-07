@@ -32,7 +32,7 @@ class Computer
 
   def lose
     'Compubot-5000 could not crack your code. You have halted the AI singularity. ' \
-    'Good job!'
+    'Good job! '
   end
 
   private

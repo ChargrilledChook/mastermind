@@ -17,7 +17,6 @@ class Player
   end
 
   def lose
-    "Bad luck! You didn't crack the code in time! " \
-    "The correct code was #{code.join('')}."
+    "Bad luck! You didn't crack the code in time! "
   end
 end
