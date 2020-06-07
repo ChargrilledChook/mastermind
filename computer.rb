@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'pry'
+
 # Responsible for generating, storing and comparing the secret code
 class Computer
   attr_reader :secret_code
@@ -26,12 +26,14 @@ class Computer
   end
 
   def win
-    'Compubot-5000 has outsmarted you and cracked your code with its advanced algorithims.' \
+    'Compubot-5000 has outsmarted you and cracked your ' \
+    'code with its advanced algorithims.' \
     ' The AI singularity has begun. Better luck next time!'
   end
 
   def lose
-    'Compubot-5000 could not crack your code. You have halted the AI singularity. ' \
+    'Compubot-5000 could not crack your code. ' \
+    'You have halted the AI singularity. ' \
     'Good job! '
   end
 
