@@ -2,12 +2,13 @@
 
 # responsible for game loop
 class Game
-  attr_accessor :computer, :player, :board
+  attr_accessor :computer, :player, :board, :cracker
 
   def initialize
     @computer = Computer.new
     @player = Player.new
     @board = Board.new
+    @cracker = Cracker.new
   end
 
   def game_start
@@ -75,3 +76,4 @@ class Game
     end
   end
 end
+
