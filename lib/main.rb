@@ -3,7 +3,7 @@
 require_relative 'board'
 require_relative 'player'
 require_relative 'computer'
-require_relative 'game'
+require_relative 'game_exp'
 require_relative 'cracker'
 
 game = Game.new

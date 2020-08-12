@@ -13,17 +13,19 @@ class Board
 
   def draw_board(guess, clues, code, mode)
     puts "Guess #{counter.to_s.rjust(2, '0')}: " \
-    "#{guess.join('')} => #{clues.join('')}\n\n"
+    "#{guess} => #{clues}\n\n"
     self.counter += 1
     check_win(clues, mode, code)
   end
 
   def check_win(clues, mode, code)
-    if clues.join('') == 'XXXX'
+    if clues == 'XXXX'
       puts mode.win
       self.counter = 100
     elsif self.counter > max_turns
-      puts mode.lose + " The correct code was #{code.join('')}."
+      puts mode.lose + " The correct code was #{code}."
     end
   end
+
+
 end

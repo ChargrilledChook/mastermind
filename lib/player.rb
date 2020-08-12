@@ -8,8 +8,8 @@ class Player
 
   def grab_code
     print 'Enter your code: '
-    guess = gets.chomp.split('')
-    guess.map(&:to_i)
+    gets.chomp
+    #guess.map(&:to_i)
   end
 
   def win
