@@ -13,7 +13,8 @@ class Computer
   end
 
   # Original partial calculation includes exact matches. We subtract exact from partial to get true partial
-  # in the result array.
+  # in the result array. The * placeholder has two roles - it counts partial matches and also replaces them in
+  # string being checked so it isn't matched multiple times.
   def compare_code(guess, code)
     exact = guess.chars.zip(code.chars).map { |a, b| a == b }.count(true)
     partial = guess.chars.reduce(code) { |check, char| check.include?(char) ? check.sub(char, '*') : check }.count('*')
