@@ -52,7 +52,7 @@ to come up with an effective and future proof / extensible design.
 
 ## Follow Up
 
-* Keep reading Sandi Metz book
+* Re-read Sandi Metz book
 * Come back to this after learning / practicing a bit more
 * Look at other student solutions
 * Look at examples of good OOP code on github etc
